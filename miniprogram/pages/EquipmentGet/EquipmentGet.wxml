@@ -1,0 +1,33 @@
+<!--pages/devicemoney/devicemoney.wxml-->
+
+<!-- <view class="content"> -->
+  <view class="list">
+    <view class="listHeader">
+      <text class="deviceName">{{ testEqName }}</text>
+      <button bindtap="replenishHandle">刷新</button>
+    </view>
+    <view class="tableViewCell">
+      <view class="tableViewCellHeader">
+        <text>补币时间</text>
+      </view>
+      <view class="tableViewCellHeader">
+        <text>补币金额(元)</text>
+      </view>
+    </view>
+    <view class="list" wx:for="{{ dataArray }}" wx:key="key">
+    <view class="tableViewCell"> 
+      <text class="tableViewCellitem">{{ item.withdrawTime }}</text>
+      <text class="tableViewCellitem">{{ item.withdrawValue }}</text>
+    </view>    
+
+
+  </view>
+
+  <view class="noData" wx:if="{{ noDataIsNull }}">
+    <van-empty description="暂无数据" />
+  </view>
+  </view>
+  <!-- wx:if="{{ noDataIsNull }}" -->
+ 
+<!-- </view> -->
+ 

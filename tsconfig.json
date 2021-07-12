@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "module": "esnext",
+    "target": "esnext",
+    "allowJs": false,
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "alwaysStrict": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "removeComments": true,
+    "pretty": true,
+    "strictPropertyInitialization": true,
+    "lib": [
+      "ES2015.Promise",
+      "esnext"
+    ],
+    "typeRoots": [
+      "./typings"
+    ],
+    "paths": {
+      "@vant/weapp/*": [
+        "path/to/node_modules/@vant/weapp/dist/*"
+      ]
+    },
+  },
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

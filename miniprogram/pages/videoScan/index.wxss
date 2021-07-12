@@ -1,0 +1,85 @@
+/* pages/videoScan/index.wxss */
+
+page {
+  height: 100%;
+  background-color: #F7F7F7;
+}
+
+.item {
+  height: 236px;
+  width: 100%;
+  background-color: #fff;
+}
+
+
+.item .img {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.item .img image {
+  height: 68px;
+  width: 68px;
+}
+
+.item .text {
+  display: flex;
+  flex-direction: column;
+  line-height: 40px;
+}
+
+.reason {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: #999999;
+  font-size: 26rpx;
+}
+
+.prompt {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 545;
+}
+
+.page .button-item {
+  display: flex;
+  justify-content: center;
+}
+
+.button-item .button {
+  margin-top: 32rpx;
+  width: 702rpx;
+  background-color: #28B350;
+  color: #fff;
+  height: 98rpx;
+  line-height: 87rpx;
+  border-radius: 6rpx;
+  text-align: center;
+}
+.dialog{
+  display: flex;
+  justify-content: center;
+  height: 1000px;
+}
+
+ .inpt{
+  border: 1px solid #979797;
+  width: 85%;
+  height:  72rpx;
+  margin:40px 20px;
+}
+
+.inpt input{
+  height: 100%;
+  width: 100%;
+}
+
+.dialog-index--van-dialog__cancel .van-button__text{
+  color: red;
+}

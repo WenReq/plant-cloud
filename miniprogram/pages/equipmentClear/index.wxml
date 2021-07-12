@@ -1,0 +1,58 @@
+<!--pages/equipmentClear/index.wxml-->
+<view class="list">
+	<!-- <view class="listHeader">
+		<text class="deviceName">{{name}}</text>
+		<view class="btnList">
+			<van-button class="btnScan" type="primary" bindtap="onScanLogin">扫码登录</van-button>
+			<van-button class="btnRef" type="primary" bindtap="onRefresh">刷新</van-button>
+		</view>
+	</view> -->
+	<view class="listHeader">
+    <text bind:tap="showPopupTitle" class="deviceName" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-left: 24rpx;line-height: 90rpx;font-size: 30rpx;font-weight: bold;">{{name}}</text>
+		<view style="margin-left:auto;flex-direction: row;display: flex;">
+      <view class="btnScan" wx:if="{{loginShow}}" bindtap="onScanLogin">扫码登录</view>
+    	<view class="btnRef" bindtap="onRefresh">刷 新</view>
+    </view>
+  </view>
+	<van-popup show="{{ showTitle }}" bind:close="titleOnClose"><text style="font-size: 28rpx;border-radius: 20rpx;">{{titleTxt}}</text></van-popup> 
+	<view class="scroll">
+		<scroll-view class="scroll-x" scroll-x="true" scroll-x>
+			<view wx:for="{{ infoList.dictList }}" wx:for-item="item" wx:key="*this" class="rowItem">
+				<image style="width:{{ item.width }}rpx;height:50rpx;" src="{{item.url}}" />
+				<view class="manyi" wx:if="{{ item.alarmState==2 }}">
+					<image mode="aspectFill" src="http://ito-cloud-img.oss-cn-beijing.aliyuncs.com/adv/20200804/15965070271854da359a8b9c04ea38e10d1275cfd0991.png" />
+				</view>
+				<view>
+					{{item.dataValue}}
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+	<view wx:if="{{fullBtnFlag}}" bindtap="clearFull" style="width:90%;margin:10rpx auto;text-align:center;">
+		<view style="background-color:#fff;border:1rpx solid #28B350;color:#28B350;height: 30px;line-height: 30px;border-radius: 16rpx;">
+			清除满溢
+		</view>
+	</view>
+	<view class="tableViewCell">
+		<view class="tableViewCellHeader">
+			<text>时间</text>
+		</view>
+		<view class="tableViewCellHeader">
+			<text>品类</text>
+		</view>
+		<view class="tableViewCellHeader">
+			<text>重量(kg)</text>
+		</view>
+	</view>
+
+	<view  wx:if="{{list.length > 0}}" wx:for="{{list}}" wx:for-item="item" wx:key="*this">
+		<view class="tableViewCell">
+			<text class="tableViewCellitem">{{item.creataDate}}</text>
+			<text class="tableViewCellitem">{{item.dataValue}}</text>
+			<text class="tableViewCellitem">{{item.weight}}</text>
+		</view>
+	</view>
+	<view wx:if="{{list.length === 0}}">
+		<van-empty description="暂无数据" />
+	</view>
+</view>

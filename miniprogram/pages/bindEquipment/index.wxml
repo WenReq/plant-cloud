@@ -1,0 +1,74 @@
+<view class="page">
+  <view class="title">
+    <view class="titleLine"></view>
+    <label for="">绑定回收设备</label>
+  </view>
+  <view class="contentView">
+    <p>*</p>
+    <label for="">摄像头名称</label>
+    <input type="text" placeholder="请输入摄像头名称" value="{{ name }}" bindinput='formName'></input>
+  </view>
+
+
+  <view class="contentView">
+    <p>*</p>
+    <label for="">IP地址</label>
+    <view class="sNumbenView">
+      <picker range="{{ pickViewArr }}" bindchange="IPAddressHandle">{{pickViewValue}}</picker>
+      <image
+        src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210318/16160460890341c05139bd74b405d97b8538d5e8deb24.png">
+      </image>
+    </view>
+  </view>
+
+
+  <view class="contentView">
+    <p>*</p>
+    <label for="">序列号</label>
+    <input type="text" placeholder="请输入序列号" value="{{ deviceSerial }}" disabled="disabled"></input>
+  </view>
+  <view class="contentView">
+    <p>*</p>
+    <label for="">密码</label>
+    <input type="text" placeholder="请输入摄像头密码（验证码）" value="{{ password }}" disabled="disabled"></input>
+  </view>
+  <view class="contentView">
+    <p>*</p>
+    <label for="">绑定回收设备</label>
+    <input type="text" placeholder="请输入MAC地址或设备序列号" bindinput='formMac' value="{{ macValue }}"></input>
+  </view>
+
+  <view class="showList" wx:if="{{macValue && showList}}">
+    <view wx:for="{{searchList}}" wx:for-item="item" wx:key="index" class="rowItem" hover-class="rowItemHover">
+      <view bind:tap="checkItem" data-type="{{item}}">
+        <view>
+          设备型号：{{item.productId}}
+        </view>
+        <view style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+          MAC：{{item.mac}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="contentBottomView">
+    <label for="">备注</label>
+    <textarea name="" id="" cols="30" rows="10" placeholder="点击输入备注" bindblur="bindTextAreaBlur"></textarea>
+  </view>
+  <button class="submit" bindtap="bindDeviceHandle">提 交</button>
+
+</view>
+
+<view class="bg" style='display:{{display}}'>
+  <view>
+    <image class="image"
+      src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210318/161604596392633eccb072a454a98994b8d0d5868fd1f.png"
+      mode='aspectFill'></image>
+    <p>绑定回收设备成功</p>
+    <label for=""></label>
+    <button class="cancelBtn" bindtap="cancelBtnHandle">重新绑定</button>
+    <button class="resultBtn" bindtap="resultBtnHandle">查看监控</button>
+  </view>
+
+</view>

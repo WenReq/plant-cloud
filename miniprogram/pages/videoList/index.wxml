@@ -1,0 +1,50 @@
+<!--pages/videoList/index.wxml-->
+<view class="page">
+	<view wx:if="{{items.length}}" class="list">
+		<view class="name">
+			<label for="" class="equName">{{ eqName }}</label>
+			<button bindtap="bindDeviceHandle">绑定摄像头</button>
+		</view>
+		<view wx:for="{{ items }}">
+			<view class="topView">
+				<view class="noneLine"></view>
+				<label for="">{{ item.name }}</label>
+				<button bindtap="activactionhandle" wx:if="{{item.isEnabled == 0}}" data-index='{{index}}'>激活</button>
+			</view>
+			<view class="video-list">
+				<live-player class="video-item" id="{{item.id}}" bindstatechange="handleStateChange" mode="RTC"
+					src="{{item.map.url}}">
+					<view wx:if="{{ item.isEnabled }}">
+						<cover-view wx:if="{{!item.isSelected}}" class="video-image" bindtap="handlePlay" data-index="{{index}}">
+							<cover-image
+								src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/15960761216840508f6f1fba840899ad8377dc52f4250.png" />
+						</cover-view>
+						<cover-view wx:else class="stop-image" bindtap="handleStop" data-index="{{index}}">
+							<cover-image
+								src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200731/15961606515190f7a213e094d483ba2ee23c547d5c880.png" />
+						</cover-view>
+						<label class="{{ item.isEnabled== 0 ? 'red' : 'blue' }}" wx:if="{{ item.isEnabled== 0 }}">未激活</label>
+						<label class="{{ item.isEnabled== 0 ? 'red' : 'blue' }}" wx:if="{{ item.isEnabled== 1 }}">已激活</label>
+						<!-- <button bindtap="tagg">123</button> -->
+					</view>
+					<view wx:else>
+						<label class="{{ item.isEnabled== 0 ? 'red' : 'blue' }}" wx:if="{{ item.isEnabled== 0 }}">未激活</label>
+						<label class="{{ item.isEnabled== 0 ? 'red' : 'blue' }}" wx:if="{{ item.isEnabled== 1 }}">已激活</label>
+					</view>
+				</live-player>
+			</view>
+		</view>
+	</view>
+	<view wx:else class="noneView">
+		<view class="topView">
+			<view class="noneLine"></view>
+			<label for="">摄像头列表</label>
+		</view>
+		<image
+			src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210317/1615967373232054a4245cdbd47d9a589c218d55dce15.png">
+		</image>
+		<label for="" class="title">未绑定摄像头</label>
+		<button bindtap="bindDeviceHandle"> + 绑定</button>
+		<label for="" class="subTitle">也可在后台BOSS管理系统中设备入库进行摄像头智能硬件绑定</label>
+	</view>
+</view>

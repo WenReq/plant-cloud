@@ -1,0 +1,183 @@
+<!--pages/testReq/index.wxml-->
+<view>
+  <image style="width:100%;position: absolute;height: 440rpx;" src="{{customTitle}}"></image>
+  <view class="container">
+    <view class="seach">
+      <view class="welcomeText">
+        <view>
+          {{welcomeText}}
+        </view>
+        <view class="exit">
+          <view class="exitTxt" bind:tap="exit">
+            <image style="width:48rpx;height:48rpx;" src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200804/15965208370013f7cd38e8b08453ba9f857854abf64f0.png"></image>
+            退出
+          </view>
+        </view>
+      </view>
+      <view class="title">
+        <view class="">
+          <view class="inputCustom">
+            <image style="width:34rpx;height:34rpx;" src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/15960929091460fb6ec44d8154adea41827c150591867.png"></image>
+            <input style="margin-left:15rpx;width:85%;" type="text" placeholder="输入设备编号搜索切换设备" bindinput="searchContent" value="{{searchVal}}"/>
+            <view class="delete" bindtap="handleDeleteClick">
+              <image style="width:34rpx;height:34rpx;" wx:if="{{searchVal}}" src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200731/1596186201308ffe600b201df4ddb93aaacabcace0f37.png"></image>
+            </view>
+            <view>
+              <image style="width:44rpx;height:44rpx;" bind:tap="onClick" src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/159608103930759f62a6c49144b5090222e7d5975c7be.png"></image>
+            </view>
+          </view>
+          <view class="showList" wx:if="{{searchVal && showList}}">
+            <view wx:for="{{searchList}}" wx:for-item="item" wx:key="index" class="rowItem" hover-class="rowItemHover">
+              <view bind:tap="checkItem" data-type="{{item}}">
+                <view>
+                  设备型号：{{item.productId}}
+                </view>
+                <view style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                  MAC：{{item.mac}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view wx:if="{{selectFlag}}">
+        <van-popup show="{{ show1 }}" bind:close="onClosePopup"><view style="padding: 30rpx;border-radius: 20rpx;font-size: 30rpx;">{{dialogTxt}}</view></van-popup> 
+        <view class="cardInfo">
+          <view class="flex">
+            <text bind:tap="showPopup" class="infoEqName">{{infoEqName}}</text>
+            <view class="infoEqStatus" wx:if="{{infoEqStatus === 1 || infoEqStatus === 0}}">已入库待测试</view>
+            <view class="infoEqStatus" wx:elif="{{infoEqStatus === 2}}">已测试待出库</view>
+            <view class="infoEqStatus" wx:elif="{{infoEqStatus === 3}}">已出库待安装</view>
+          </view>
+          <view class="cardContent">
+            <view wx-if="{{infoEqNo}}" class="flex">
+              <text>型号：{{infoEqNo}}</text>
+            </view>
+            <view class="flex">
+              <view>
+                <text>{{infoProductId}}</text>
+                <!-- <image style="width:30rpx;height:30rpx;margin-left:30rpx" src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/15961017411310f514529d1f0416c834cb9d4d0946136.png"></image> -->
+              </view>
+              <view class="right">
+                <view class="outBtn" wx:if="{{infoBtnStatus === 1}}" bind:tap="testAccomplish">
+                  <text class="outText">测试完成</text>
+                </view>
+                <view class="outBtn" wx:elif="{{infoBtnStatus === 2}}" bind:tap="out">
+                  <text class="outText">出 库</text>
+                </view>
+                <view class="outBtn" wx:elif="{{infoBtnStatus === 3}}" bind:tap="install">
+                  <text class="outText">安 装</text>
+                </view>
+                <view class="outBtn" style="background:#ccc" wx:elif="{{infoBtnStatus === 4}}">
+                  <text class="outText">已安装</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <van-popup show="{{showOut}}" position="bottom" custom-style="height:50%;" bind:close="onOutColse">
+        <van-picker show-toolbar
+        columns="{{outColumns}}" bind:cancel="onOutColse" bind:confirm="onOutConfirm"/>
+      </van-popup>
+      <van-dialog
+        use-slot
+        title=""
+        show="{{ show }}"
+        show-cancel-button
+        bind:close="onClose"
+        bind:confirm="onOk"
+      >
+        <text class="dialogText">确认测试完成</text>
+      </van-dialog>
+      <van-dialog
+        use-slot
+        title=""
+        show="{{ showAccount }}"
+        show-cancel-button
+        bind:close="onCloseAccount"
+        bind:confirm="onOkAccount"
+      >
+        <text class="dialogText">确认退出该账号</text>
+      </van-dialog>
+      <view wx:if="{{!selectFlag}}">
+        <view style="margin-top: 140rpx;">
+        </view>
+      </view>
+      <van-row class="row">
+        <van-col span="8">
+          <view class="item" bindtap="saomaLink">
+            <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/1596088976798143592a097f54f0b8794710718d24f87.png"></image>
+            <view class="desc">
+              <text>扫码投递</text>
+            </view>
+          </view>
+        </van-col>
+        <van-col span="8">
+           <view class="item" bindtap="bubiLink">
+            <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/1596089037082b25776dd587642f6869288d41c68f622.png"></image>
+            <view class="desc">
+              <text>设备补币</text>
+            </view>
+          </view>
+        </van-col>
+        <van-col span="8">
+           <view class="item" bindtap="qubiLink">
+            <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/15960890538114d7da8e6881641ef99f188bab13d707f.png"></image>
+            <view class="desc">
+              <text>设备取币</text>
+            </view>
+          </view>
+        </van-col>
+      </van-row>
+      <van-row class="row">
+        <van-col span="8">
+           <view class="item" bindtap="zhuapaiLink">
+            <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/1596089079716cab590d5ebed457ab106da5e18e57767.png"></image>
+            <view class="desc">
+              <text>设备抓拍</text>
+            </view>
+          </view>
+        </van-col>
+        <van-col span="8">
+           <view class="item" bindtap="jiankongLink">
+            <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/15960890622665275ae2ce28d4534bd62502f67e893dd.png"></image>
+            <view class="desc">
+              <text>视频监控</text>
+            </view>
+          </view>
+        </van-col>
+        <van-col span="8">
+           <view class="item" bindtap="qingyunLink">
+            <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/15960890914827b62687ef76b408c8a07d56d74d49fd8.png"></image>
+            <view class="desc">
+              <text>设备清运</text>
+            </view>
+          </view>
+        </van-col>
+      </van-row>
+      <van-row class="row">
+        <van-col span="8">
+           <view class="item" bindtap="adLink">
+            <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/1596089101523c852dd32a6294d10b8467392eb1b6869.png"></image>
+            <view class="desc">
+              <text>广告发布</text>
+            </view>
+          </view>
+        </van-col>
+        <van-col span="8">
+           <view class="item" bindtap="activaActionLink">
+            <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/1596089101523c852dd32a6294d10b8467392eb1b6869.png"></image>
+            <view class="desc">
+              <text>摄像头激活</text>
+            </view>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+  </view>
+
+  
+</view>

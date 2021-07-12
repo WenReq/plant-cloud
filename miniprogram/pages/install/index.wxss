@@ -1,0 +1,57 @@
+/* pages/install/index.wxss */
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding:0;
+  box-sizing: border-box;
+  width: 100%;
+}
+.title{
+  position: relative;
+}
+.title , .content{
+  width: 100%;
+}
+.contentTitle{
+  color: #484848;
+  display: flex;
+  margin-left: 25rpx;
+  font-weight: 600;
+}
+.titleIcon{
+  width: 10rpx;
+  margin-right: 25rpx;
+  background-color: #388FFC;
+}
+.form{
+  width: 98%;
+  margin: 0 auto;
+}
+.line{
+  width: 5rpx;
+  height: 15rpx;
+}
+.submit{
+  position: fixed;
+  margin:auto;
+  left:0;
+	right:0;
+  bottom: 35rpx;
+  width: 95%;
+  text-align: center;
+}
+
+.rowItem{
+  background-color: white;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 12rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.rowItemHover{
+  background-color: #51DA88;
+}

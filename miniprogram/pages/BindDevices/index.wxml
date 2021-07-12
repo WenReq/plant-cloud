@@ -1,0 +1,60 @@
+<view class="page">
+	<view class="title">
+		<view class="titleLine"></view>
+		<label for="">智能硬件-摄像头</label>
+	</view>
+	<view class="contentView">
+		<p>*</p>
+		<label for="">摄像头名称</label>
+		<input type="text" placeholder="请输入摄像头名称" bindinput='formName' value="{{ name }}"></input>
+	</view>
+
+	<view class="contentView">
+		<p>*</p>
+		<label for="">是否使用萤石云？</label>
+		<switch bindchange="switch1Change" checked="{{ ischecked }}"></switch>
+	</view>
+
+	<view class="contentView">
+		<p>*</p>
+		<label for="">IP地址</label>
+		<input type="text" placeholder="请输入摄像头IP地址" hidden="{{ IPaddressHidden }}" bindinput='formIPCity'></input>
+		<view class="sNumbenView">
+			<picker range="{{pickViewArr}}" bindchange="IPAddressHandle">{{pickViewValue}}</picker>
+			<image
+				src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210318/16160460890341c05139bd74b405d97b8538d5e8deb24.png">
+			</image>
+		</view>
+	</view>
+
+	<view class="contentView" hidden="{{ sNumberHidden }}">
+		<p>*</p>
+		<label for="">序列号</label>
+		<input type="text" placeholder="请输入摄像头序列号" bindinput='fromdeviceSerial' value="{{ deviceSerialValue }}"></input>
+	</view>
+	<view class="contentView" hidden="{{ sNumberHidden }}">
+		<p>*</p>
+		<label for="">密码</label>
+		<input type="text" placeholder="请输入摄像头密码（验证码）" bindinput='frompassword' value="{{ passwordValue }}"></input>
+
+	</view>
+	<view class="contentBottomView">
+		<label for="">备注</label>
+		<textarea name="" id="" cols="30" rows="10" placeholder="点击输入备注" bindblur="bindTextAreaBlur"></textarea>
+	</view>
+	<button class="submit" bindtap="bindDeviceHandle">提 交</button>
+
+
+</view>
+<view class="bg" style='display:{{display}}'>
+	<view>
+		<image class="image"
+			src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210318/161604596392633eccb072a454a98994b8d0d5868fd1f.png"
+			mode='aspectFill'></image>
+		<p>绑定成功</p>
+		<label for=""></label>
+		<button class="cancelBtn" bindtap="cancelBtnHandle">继续绑定</button>
+		<button class="resultBtn" bindtap="resultBtnHandle">确 定</button>
+	</view>
+
+</view>

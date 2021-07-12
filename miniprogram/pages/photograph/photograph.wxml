@@ -1,0 +1,39 @@
+<!-- <view class="content"> -->
+  <view class="photoList">
+    <view class="photoListHeader">
+      <text class="deviceName">{{ testEqName }}</text>
+      <button bindtap="replenishHandle">刷新</button>
+    </view>
+<!-- list -->
+  <view class='photo-item-list'>
+    <view class='photo-cell'  wx:for="{{ dataListArray }}" wx:key="index" data-index="{{ index }}" bindtap="preImageBigHandle">
+      <image src="{{ item.path }}"></image>
+    </view>
+  </view>
+
+
+  <view class="noData" wx:if="{{ noDataIsNull }}">
+    <van-empty description="暂无数据" />
+  </view>
+
+</view>
+ <!--圆形点击框  -->
+<view class="round-click">
+   <view bindtap="takeCandidHandle">抓拍</view>
+</view>
+
+
+<!--模态框-->
+<!-- 遮罩层 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" wx:key="index"></view>
+
+<view class="modal-dialog" wx:if="{{showModal}}" wx:key="index">
+<view class="modal-title">提示</view>
+<view class="modal-content">
+<view class="concent_list {{curindex==index? 'active':''}}" wx:for="{{errorConcent_list}}" wx:key="index" wx:for-index='index' data-index='{{index}}' bindtap='choose' data-name='{{item}}'>{{ item.name + item.msg }}</view>
+</view>
+
+<view class="modal-footer">
+<view class="btn-cancel" bindtap="onCancel" data-status="cancel">关闭</view>
+</view>
+</view>

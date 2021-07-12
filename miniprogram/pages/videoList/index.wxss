@@ -1,0 +1,263 @@
+/* pages/videoList/index.wxss */
+/* .page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F7F7F7;
+  padding: 30rpx 24rpx;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 0 8rpx 0 rgba(170, 170, 170, 0.1);
+}
+
+.main-title {
+  width: 100%;
+  padding: 24rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333;
+  border-bottom: 1rpx solid #F2F2F2;
+}
+
+.list {
+  width: 100%;
+}
+
+.list-title {
+  width: 100%;
+  display: flex;
+  padding: 24rpx 0;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.list-title>view {
+  width: 33.33%;
+  text-align: center;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  padding-bottom: 30rpx;
+  font-size: 28rpx;
+  color: #2C2C2C;
+}
+
+.item>view {
+  width: 33.33%;
+  text-align: center;
+} */
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+.name {
+  display: inline-block;
+  width: 100%;
+  /* background-color: black; */
+}
+.equName{
+  float: left;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  padding-left: 10px;
+  color: black;
+}
+.name  button {
+float: right;
+height: 40px;
+font-size: 15px;
+color: #458DE2;
+}
+
+.backGroundImg {
+  display: block;
+  width: 100%;
+  height: 200px;
+  background-color: #666666;
+}
+.backGroundImg image {
+  position: absolute;
+margin-top: -140px;
+margin-left: 40%;
+z-index: 999;
+  width: 80px;
+  height: 80px;
+}
+
+.red {
+  /* margin-top: -200px; */
+ float: right; 
+  /* z-index: 999;  */
+  background-color: red;
+  width: 50px;
+  height: 20px;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+
+}
+.blue {
+  /* margin-top: -200px; */
+ float: right;
+  /* z-index: 999;  */
+  background-color: #45DA68;
+  width: 50px;
+  height: 20px;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+
+}
+
+
+
+.topView {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0 0 0;
+  background-color: white;
+  margin: 10px 0  0 0;
+
+}
+button::after{
+  border: none;
+}
+.topView button {
+  float: right;
+  border:none; /*正常来说加上这个是可以去掉边框的*/
+  border-width: 0px;
+  width: 70px;
+  height: 40px;
+  background-color: #fff;
+  color: #458DE2;
+  font-size: 14px;
+  line-height: 40px;
+
+}
+.topView label {
+  height: 100px;
+  margin-left: 10px;
+  line-height: 40px;
+}
+
+.noneView image {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.title {
+  display: block;
+  height: 50px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.noneView button {
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #458DE2;
+  color: white;
+  font-weight: 400;
+}
+
+.subTitle {
+  display: block;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.noneLine {
+  float: left;
+  width: 5px;
+  height: 20px;
+  background-color: #458DE2;
+  margin: 10px 0  0 5px;
+}
+.title-btn {
+  width: 130rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  background-color: #28B350;
+  border-radius: 24rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.title-btn:active {
+  background-color: rgba(40, 179, 80, .7);
+}
+
+.video-list {
+  width: 100%;
+  /* margin-top: 36rpx; */
+}
+
+.video-item {
+  width: 100%;
+  height: 328rpx;
+  border-radius: 5rpx;
+  /* margin-bottom: 30rpx; */
+  position: relative;
+}
+
+.video-title {
+  width: 142rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 24rpx;
+  text-align: center;
+  color: #2C2C2C;
+  border-radius: 5rpx;
+  margin: 20rpx;
+}
+
+.video-image{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -40rpx;
+  top: 50%;
+  margin-top: -40rpx;
+}
+
+.stop-image{
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+}
+.noYSY {
+  height: 200px;
+  width: 100%;
+  background-color: red;
+}
+.imagea {
+  height: 200px;
+  width: 100%;
+}

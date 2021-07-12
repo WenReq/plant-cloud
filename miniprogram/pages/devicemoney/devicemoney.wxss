@@ -1,0 +1,213 @@
+/* pages/devicemoney/devicemoney.wxss */
+
+page {
+  height: 100%;
+  background-color: #f1f1f1;
+}
+button{
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  line-height: 1rpx;
+  border: 1px solid #cccccc;
+   min-height: 0;                            /* 默认自带最小高度为40px  设置小于40px式不生效需要先清空默认的最小高度再设置高度*/
+}
+input {
+  outline: none;
+  border: none;
+  list-style: none;
+}
+/*我们可以使用::after的方式去覆盖默认值*/
+button::after {
+  border: none;
+}
+.list {
+  background-color: white;
+  border-radius: 8px;
+  margin: 12px 12px;
+}
+
+.listHeader {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #f1f1f1;
+  overflow: hidden;
+  height: 90rpx;
+}
+
+.list .listHeader text {
+   padding-left: 24rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: inline-block;
+  overflow: hidden;
+  width: 70%;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+.list .listHeader button {
+   float: right;
+  margin-right: 12px;  
+  margin-top: 12px;
+  width: 120rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  background-color: #38b350;
+  color: white;
+  border-radius: 24px; 
+  font-size: 12px;
+  border: 0px solid #fff;
+}
+
+.list .listHeader button::after {
+  border-radius: 90rpx;
+  border: 0;
+}
+
+.tableViewCell {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tableViewCellHeader {
+  flex: 1;
+  text-align: center;
+}
+.tableViewCell .tableViewCellHeader text {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: #999999;
+  font-size: 24rpx;
+  line-height: 40px;
+}
+
+.tableViewCellitem {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  margin-bottom: 15px;
+}
+
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 16rpx;
+}
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+}
+.modal-content {
+  padding: 60rpx 40rpx;
+}
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  height: 72rpx;
+}
+
+.input {
+  width: 100%;
+  font-size: 28rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  /* margin-top: 7px; */
+  box-sizing: border-box;
+  color: #333;
+  text-align: center;
+}
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 98rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 98rpx;
+}
+.btn-cancel {
+  width: 50%;
+  color: #e95e57;
+  text-align: center;
+  border-right: 1px solid #dedede;
+  font-size: 30rpx;
+}
+.btn-confirm {
+  width: 50%;
+  color: #1677ff;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.modal-content button {
+  font-size: 45rpx;
+  font-weight: 900;
+  color: white;
+  background-color: #28B350;
+  text-align: center;
+  border: 0px solid #fff;
+  line-height: 46rpx;
+  width: 60rpx;
+  height: 46rpx;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.modal-content .cutBtn {
+  margin-left: 7px;
+  margin-top: 7px;
+}
+.modal-content .addBtn {
+  margin-right: 7px;
+  margin-top: 7px;
+}
+
+.noData{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.noData view{
+  font-size: 24rpx;
+  color:#888;
+  margin-top: 40rpx;
+}

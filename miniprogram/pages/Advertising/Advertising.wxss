@@ -1,0 +1,58 @@
+page {
+  height: 100%;
+  background-color: #f1f1f1;
+}
+
+.advertPost {
+  background-color: white;
+  border-radius: 8px;
+  margin: 12px;
+}
+
+.advertListHeader {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.advertPost .advertListHeader text {
+  padding-left: 24rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.tableViewCellItem image {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 12px;
+  height: 316rpx;
+  border-radius: 8rpx;
+}
+
+.itemBottom {
+  width: 100%;
+  border-bottom: 1px solid #f1f1f1;
+  height: 90rpx;
+}
+
+.itemBottom text {
+  line-height: 90rpx;
+  margin-left: 12px;
+  /* margin-top: 12px; */
+} 
+
+.itemBottom button {
+  line-height: 90rpx;
+
+  float: right;
+  margin-right: 12px;  
+  margin-top: 11px;
+  width: 120rpx;
+  height: 48rpx;
+  background-color: #38b350;
+  color: white;
+  border-radius: 24px; 
+  font-size: 12px;
+} 

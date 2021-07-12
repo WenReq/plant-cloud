@@ -1,0 +1,37 @@
+<!--pages/scanDeliver/index.wxml-->
+<view class="list">
+    <view class="listHeader">
+      <text bind:tap="showPopupTitle" class="deviceName" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-left: 24rpx;line-height: 90rpx;font-size: 30rpx;font-weight: bold;">{{eqName}}</text>
+      <view style="margin-left:auto;flex-direction: row;display: flex;">
+        <view class="btnScan" wx:if="{{showScanLogin}}" bindtap="scanLogin">扫码登录</view>
+        <view class="btnRef" bindtap="refresh">刷 新</view>
+      </view>
+    </view>
+    <van-popup show="{{ showTitle }}" bind:close="titleOnClose"><text style="font-size: 28rpx;border-radius: 20rpx;">{{titleTxt}}</text></van-popup> 
+    <view class="table">
+      <view class="tr bg-w">
+      <view style="width:66%" class="th">时间</view>
+      <view style="width:45%" class="th">品类</view>
+      <view style="width:40%" class="th ">重量(kg)</view>
+      <view style="width:38%" class="th ">金额(元)</view>
+      <view style="width:35%" class="th ">环保值</view>
+    </view>
+    <van-popup show="{{ show }}" bind:close="onClose"><text style="padding: 30rpx;border-radius: 20rpx;">{{dialogTxt}}</text></van-popup> 
+    <block wx:if="{{tableList.length > 0}}" wx:for="{{tableList}}" wx:for-item="item" wx:key="index">
+      <view class="tr">
+        <view style="width:66%" class="td">{{item.deliveryTime}}</view>
+        <view bind:tap="showPopup" data-type="{{item}}" class="deliveryType">{{item.deliveryType}}</view>
+        <view style="width:40%" class="td">{{item.weight}}</view>
+        <view style="width:38%" class="td">{{item.newBalance}}</view>
+        <view style="width:35%" class="td">{{item.newEnviron}}</view>
+      </view>
+    </block>
+    <block wx:if="{{tableList.length === 0}}">
+      <van-empty description="暂无数据" />
+    </block>
+  </view>
+</view>
+<view class="round-click" wx:if="{{roundFlag}}">
+  <view wx:if="{{showOpen210}}" bindtap="open210">开门</view>
+  <view wx:if="{{showClose210}}" bindtap="close210">关门</view>
+</view>

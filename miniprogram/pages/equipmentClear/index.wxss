@@ -1,0 +1,120 @@
+/* pages/equipmentClear/index.wxss */
+page {
+  height: 100%;
+  background-color: #f1f1f1;
+}
+
+.list {
+  background-color: white;
+  border-radius: 8px;
+  margin: 12px 12px;
+}
+
+.listHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.list .listHeader text {
+  padding-left: 24rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.btnList {
+  margin-left: auto;
+}
+
+.rowItem {
+  display: inline-block;
+  padding: 20rpx;
+  text-align: center;
+  line-height: 25px;
+  margin: 24px 6px;
+
+}
+
+.scroll {
+  border-bottom: 1px solid #F2F2F2;
+}
+
+.scroll-x {
+  white-space: nowrap;
+  display: flex;
+}
+
+.list .listHeader .btnList button {
+  background-color: #38b350;
+  color: white;
+  border-radius: 35rpx;
+  font-size: 26rpx;
+  height: 48rpx;
+  margin: 0 12rpx;
+}
+
+.list .listHeader button::after {
+  border-radius: 90rpx;
+  border: 0;
+}
+
+.tableViewCell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableViewCellHeader {
+  flex: 1;
+  text-align: center;
+}
+
+.tableViewCell .tableViewCellHeader text {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: #999999;
+  font-size: 24rpx;
+  line-height: 40px;
+}
+
+.tableViewCellitem {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  margin-bottom: 15px;
+  color: #2C2C2C;
+}
+
+.manyi {
+  position: absolute;
+  top: 4px;
+  margin-left: 20px;
+}
+
+.manyi image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.btnRef{
+  width: 100rpx;
+  padding: 10rpx;
+  background-color: #28B350;
+  border-radius: 30rpx;
+  color:white;
+  font-size: 28rpx;
+  text-align: center;
+}
+.btnScan{
+  width: 160rpx;
+  padding: 10rpx;
+  background-color: #28B350;
+  border-radius: 30rpx;
+  color:white;
+  font-size: 28rpx;
+  text-align: center;
+  margin-right: 10rpx;
+}

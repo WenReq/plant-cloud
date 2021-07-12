@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "扫码投递",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-empty": "@vant/weapp/empty/index"
+  }
+}

@@ -1,0 +1,68 @@
+<view class="page">
+  <view class="typeView">
+    <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210318/161604596392633eccb072a454a98994b8d0d5868fd1f.png"></image>
+    <label for="" class="title">摄像头已激活</label>
+  </view>
+  <view>
+    <view class="contentView">
+      <label for="">摄像头名称</label>
+      <view>
+        <input type="text" placeholder="请输入摄像头名称" value="{{ name }}" bindinput='formName' bindblur="setToName"></input>
+        <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210318/1616036176150ae2a13acc77746e198f61b8992475605.png"></image>
+      </view>
+    </view>
+
+    <view class="contentView">
+      <label for="">激活时间</label>
+      <view>
+        <input type="text" placeholder="" value="{{ createTime }}" disabled="disabled"></input>
+      </view>
+    </view>
+    
+    <view class="contentView">
+      <label for="">序列号</label>
+      <view>
+        <input type="text" placeholder="" value="{{ deviceSerial }}" disabled="disabled"></input>
+      </view>
+    </view>
+    
+    <view class="contentView">
+      <label for="">密码</label>
+      <view>
+        <input type="text" placeholder="" value="{{ password }}" disabled="disabled"></input>
+      </view>
+    </view>
+
+    <view class="contentView" wx:if="{{ deviceCode }}">
+      <label for="">回收设备编号</label>
+      <view>
+        <input type="text" placeholder="" value="{{ deviceCode }}"  bindinput='formMac'></input>
+        <image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210318/1616036176150ae2a13acc77746e198f61b8992475605.png"></image>
+      </view>
+    </view>
+
+
+	<view class="showList" wx:if="{{deviceCode && showList}}">
+            <view wx:for="{{searchList}}" wx:for-item="item" wx:key="index" class="rowItem" hover-class="rowItemHover">
+              <view bind:tap="checkItem" data-type="{{item}}">
+                <view>
+                  设备型号：{{item.productId}}
+                </view>
+                <view style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                  MAC：{{item.mac}}
+                </view>
+              </view>
+            </view>
+          </view>
+
+
+    <view class="contentView" wx:if="{{ productname }}">
+      <label for="">回收设备名称</label>
+      <view>
+        <input type="text" placeholder="" disabled="disabled" value="{{ productname }}"></input>
+      </view>
+    </view>
+  </view>
+  <button class="submit" bindtap="lookVideoHandle" wx:if="{{ productname }}">查看视频监控</button>
+  <button class="submit" bindtap="bindDeviceHandle" wx:else>+ 去绑定回收设备</button>
+</view>

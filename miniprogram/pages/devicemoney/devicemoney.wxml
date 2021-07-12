@@ -1,0 +1,50 @@
+<!--pages/devicemoney/devicemoney.wxml-->
+
+<!-- <view class="content"> -->
+  <view class="list">
+    <view class="listHeader">
+      <text class="deviceName">{{  name }}</text>
+      <button bindtap="replenishHandle">补币</button>
+      <!-- <van-button type="primary" bindtap="replenishHandle">补币</van-button> -->
+    </view>
+    <view class="tableViewCell">
+      <view class="tableViewCellHeader">
+        <text>补币时间</text>
+      </view>
+      <view class="tableViewCellHeader">
+        <text>补币金额(元)</text>
+      </view>
+    </view>
+    <view class="list" wx:for="{{ devListArray }}" wx:key="key">
+    <view class="tableViewCell"> 
+      <text class="tableViewCellitem">{{ item.addCoinTime }}</text>
+      <text class="tableViewCellitem">{{ item.addCoinValue }}</text>
+    </view>   
+    
+  </view>
+
+ 
+  <view class="noData" wx:if="{{ noDataIsNull }}">
+    <van-empty description="暂无数据" />
+  </view>
+
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">选择补币数量</view>
+    <view class="modal-content">
+      <view class="modal-input">
+      <button class="cutBtn" form-type='submit' plain='true' bindtap="cutHandle">-</button>
+      <input placeholder-class="input-holder" type="number" maxlength="4" bindinput="inputChange" bindtap="inputDid" bindfocus="inputDid" class="input" placeholder="0" value="{{ count }}"></input>
+      <button class="addBtn" form-type='submit' plain='true' bindtap="addHandle">+</button>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确认</view>
+    </view>
+  </view>
+
+  </view>
+<!-- </view> -->
+ 

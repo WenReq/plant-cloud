@@ -1,0 +1,7 @@
+<view class="page">
+  <image wx:if="{{ isEzviz == 0}}" src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210319/1616140787973be9272e2b34e4e95a9cb46039afe4cfc.png"></image>
+  <image wx:if="{{ isEzviz == 1}}" src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20210318/161604596392633eccb072a454a98994b8d0d5868fd1f.png"></image>
+  <label for="" class="title" wx:if="{{ isEzviz == 1}}">激活成功</label>
+  <label for="" class="title" wx:if="{{ isEzviz == 0}}">激活失败</label>
+  <!-- <label for="" class="subTitle">网络连接失败</label> -->
+</view>

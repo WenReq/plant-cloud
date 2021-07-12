@@ -1,0 +1,111 @@
+/* pages/devicemoney/devicemoney.wxss */
+
+page {
+  height: 100%;
+  background-color: #f1f1f1;
+}
+button{
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  line-height: 1rpx;
+  border: 1px solid #cccccc;
+   min-height: 0;                            /* 默认自带最小高度为40px  设置小于40px式不生效需要先清空默认的最小高度再设置高度*/
+}
+input {
+  outline: none;
+  border: none;
+  list-style: none;
+}
+/*我们可以使用::after的方式去覆盖默认值*/
+button::after {
+  border: none;
+}
+.list {
+  background-color: white;
+  border-radius: 8px;
+  margin: 12px 12px;
+}
+
+.listHeader {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #f1f1f1;
+  overflow: hidden;
+  height: 90rpx;
+}
+
+.list .listHeader text {
+  padding-left: 24rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: inline-block;
+  overflow: hidden;
+  width: 70%;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+.list .listHeader button {
+  float: right;
+  margin-right: 12px;  
+  margin-top: 12px;
+  width: 120rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  background-color: #38b350;
+  color: white;
+  border-radius: 24px; 
+  font-size: 12px;
+  border: 0px solid #fff;
+}
+
+.list .listHeader button::after {
+  border-radius: 90rpx;
+  border: 0;
+}
+
+.tableViewCell {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tableViewCellHeader {
+  flex: 1;
+  text-align: center;
+}
+.tableViewCell .tableViewCellHeader text {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: #999999;
+  font-size: 24rpx;
+  line-height: 40px;
+}
+
+.tableViewCellitem {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  margin-bottom: 15px;
+}
+
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+
+.noData{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.noData view{
+  font-size: 24rpx;
+  color:#888;
+  margin-top: 40rpx;
+}

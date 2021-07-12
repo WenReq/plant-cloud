@@ -1,0 +1,18 @@
+<!--pages/Advertising/Advertising.wxml-->
+<!-- <view class="content"> -->
+  <view class="advertPost">
+    <view class="advertListHeader">
+      <text class="deviceName">{{ name }}</text>
+    </view>
+    <view class="tableViewCellItem">
+      <view wx:for="{{ photoArray }}" wx:key="key">
+        <image mode="widthFix" src="{{ item.imageUrl }}" class=""></image>
+        <view class="itemBottom">
+          <text> {{ item.title }} </text>
+          <van-button type="primary" bindtap="replenishHandle" data-index="{{ index }}">发布</van-button>
+        </view>
+      </view>
+    </view>
+  </view>
+<!-- </view> -->
+ 

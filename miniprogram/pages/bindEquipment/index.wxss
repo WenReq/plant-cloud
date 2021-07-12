@@ -1,0 +1,230 @@
+/* miniprogram/pages/BindDevices/index.wxss */
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+.titleLine {
+  float: left;
+  width: 5px;
+  height: 20px;
+  background-color: #458DE2;
+  margin: 10px 0  0 5px;
+}
+.title {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0 0 0;
+  background-color: white;
+  margin: 10px 0  0 0;
+  vertical-align: middle;
+
+}
+.title label {
+  height: 100px;
+  margin-left: 10px;
+line-height: 40px;
+}
+
+.titlebottomline {
+  width: 100%;
+  background-color: #f7f7f7;
+  height: 1px;
+}
+
+.contentView {
+overflow: hidden;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  margin-top: 1px;
+}
+
+.contentView p {
+  float:left;
+  margin-left: 10px;
+  color: red;
+  line-height: 50px;
+
+}
+.contentView label {
+  float: left;
+  height: 100px;
+  width: 30%;
+  margin-left: 10px;
+  line-height: 50px;
+  font-size: 14px;
+  width: 100px;
+}
+.contentView input {
+  width: 60%;
+  height: 50px;
+  font-size: 14px;
+  text-align: right;
+}
+.sNumbenView {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: right;
+}
+
+.contentView picker {
+/* float: left; */
+/* width: 180px; */
+text-align: right;
+line-height: 50px;
+font-size: 14px;
+color: #777;
+}
+
+.contentView image {
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
+  margin-right: 15px;
+} 
+.contentBottomView {
+  overflow: hidden;
+  height: 100px;
+  background-color: #fff;
+  margin-top: 1px;
+}
+.contentBottomView label {
+  
+  float: left;
+  margin-left: 10px;
+  line-height: 100px;
+  font-size: 14px;
+  width: 33%;
+}
+
+.contentBottomView textarea {
+  width: 60%;
+  height: 100px;
+  font-size: 14px;
+  text-align: right;
+margin-top: 10px;
+}
+
+.submit {
+  background-color: #458DE2;
+  color: white;
+  font-weight: 400;
+  width: 90%;
+  margin-top: 100px;
+}
+.modalView {
+  text-align: center;
+}
+.modalView view {
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+}
+.image {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  line-height: 80px;
+
+}
+.bg{
+display: none;
+position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 100%;
+background-color: black;
+z-index: 1001;
+background: rgba(0, 0, 0, 0.7);
+text-align: center;
+}
+.bg view {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
+  margin-top: 45%;
+  background-color: #fff;
+  border-radius: 5px
+
+}
+.bg image {
+  margin-top: 30px;
+}
+.bg p {
+  display: block;
+  font-size: 20px;
+  margin-top: 5px;
+  font-weight: 600;
+}
+.cancelBtn {
+  float: left;
+  width: 50%;
+  height: 60px;
+  border:none;
+  background-color: #fff;
+  color: #458DE2;
+  font-size: 17px;
+  line-height: 60px;
+  margin-top: 10px;
+}
+.resultBtn {
+  float: right;
+  width: 50%;
+  height: 60px;
+  border:none;
+  background-color: #fff;
+  font-size: 17px;
+  margin-top: 10px;
+  color: #458DE2;
+  line-height: 60px;
+}
+button::after{
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.flex {
+  display: flex;
+  align-items: center;
+
+}
+
+
+
+
+
+.rowItem {
+  background-color: white;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 12rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.rowItemHover {
+  background-color: #51DA88;
+}
+
+.showList {
+  position: absolute;
+  width: 86%;
+  left: 56rpx;
+  max-height: 600rpx;
+  overflow: scroll;
+  z-index: 999;
+}

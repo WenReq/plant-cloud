@@ -1,0 +1,37 @@
+/* pages/login/index.wxss */
+.page {
+  width: 100vw;
+  height: 100vh;
+  background: url('http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200729/15960104560298aa0d56aa1674958aaca950b766c0543.png') no-repeat;
+  background-size: 283rpx 313rpx;
+  background-position-x: right;
+  background-position-y: 88rpx;
+  padding: 114rpx 66rpx;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 50rpx;
+  font-weight: 500;
+  color: #192C3D;
+}
+
+.input {
+  width: 100%;
+  margin-top: 136rpx;
+  font-size: 28rpx;
+  color: #B4B4B4;
+}
+
+.input-item {
+  height: 70rpx;
+  border-bottom: 1rpx solid #F8F8F8;
+}
+
+.input-item:last-child {
+  margin-top: 70rpx;
+}
+
+.page .btn {
+  margin-top: 132rpx;
+}

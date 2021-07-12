@@ -1,0 +1,17 @@
+<!--pages/video/index.wxml-->
+<view class="page">
+	<view class="main">
+		<view class="title">
+			<text>智能垃圾回收站H600</text>
+		</view>
+		<view class="video-list">
+			<live-player class="video-item" id="previewPlayer" bindstatechange="handleStateChange" mode="RTC" src="{{videoSrc}}">
+				<cover-view wx:if="{{name}}" class="video-title">{{name}}</cover-view>
+				<cover-view wx:if="{{!playVideo}}" class="video-image" bindtap="handlePlay">
+					<cover-image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/15960761216840508f6f1fba840899ad8377dc52f4250.png" />
+				</cover-view>
+				<cover-image wx:else class="stop-image" bindtap="handleStop" src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200731/15961606515190f7a213e094d483ba2ee23c547d5c880.png" />
+			</live-player>
+		</view>
+	</view>
+</view>

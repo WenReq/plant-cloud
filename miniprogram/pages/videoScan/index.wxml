@@ -1,0 +1,40 @@
+<!--pages/videoScan/index.wxml-->
+<view class="page">
+
+	<view class="item">
+		<view wx:if="{{ success }}" class="img">
+			<image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/159609252941113a5768712034eb5bc68a851511b47ee.png">
+			</image>
+		</view>
+		<view wx:if="{{ !success }}" class="img">
+			<image src="http://ito-boss-img.oss-cn-hangzhou.aliyuncs.com/material/20200730/159608821564967defb8aa4854e93a2893491a9ee1fab.png">
+			</image>
+		</view>
+		<view class="text">
+			<view class="prompt">
+				<text wx:if="{{ success }}">激活成功</text>
+				<text wx:if="{{ !success }}">激活失败</text>
+			</view>
+			<view class="reason">
+				<text wx:if="{{ success }}">编号：{{ productId }}</text>
+				<text wx:if="{{ !success }}">网络连接失败</text>
+			</view>
+		</view>
+	</view>
+	<view wx:if="{{ success }}" class="button-item" bindtap="onClick"  >
+		<view class="button">
+			修改名称
+		</view>
+	</view>
+
+	<van-dialog use-slot  title="修改摄像头名称" show="{{ show }}" show-cancel-button bind:getuserinfo="getUserInfo" bind:confirm="onSubmit" bind:cancel="onClose">
+
+		<van-cell-group>
+			<view class="inpt">
+				<input type="text" bindinput="handleInput">
+				</input>
+			</view>
+		</van-cell-group>
+
+	</van-dialog>
+</view>

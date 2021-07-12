@@ -1,0 +1,13 @@
+<!--pages/login/index.wxml-->
+<view class="page">
+	<view class="title">欢迎来到华展工厂云</view>
+	<view class="input">
+		<view class="input-item">
+			<input data-type="U" placeholder="请输入登录账号" maxlength="50" placeholder-style="color:#B4B4B4" bindinput="handleInput" />
+		</view>
+		<view class="input-item">
+			<input data-type="P" password placeholder="请输入密码" maxlength="50" placeholder-style="color:#B4B4B4" bindinput="handleInput" />
+		</view>
+	</view>
+	<view class="btn {{isDisable?'disable':''}}" bindtap="submit">登录</view>
+</view>

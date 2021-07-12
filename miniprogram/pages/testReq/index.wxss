@@ -1,0 +1,167 @@
+/* pages/testReq/index.wxss */
+.flex {
+  display: flex;
+  align-items: center;
+
+}
+
+.right {
+  margin-left: auto;
+}
+
+.container {
+  /* position: fixed;
+  display: flex;
+  flex-direction: column;
+  margin: 0 15rpx;
+  top: 120rpx; */
+  position: relative;
+  width: 100%;
+  top: 12vh;
+}
+
+.seach {
+  margin-left: 35rpx;
+}
+
+.inputCustom {
+  display: flex;
+  height: 45rpx;
+  line-height: 45rpx;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 15rpx 25rpx;
+  border-radius: 30rpx;
+  width: 90%;
+  align-items: center;
+  position: relative;
+}
+
+.delete {
+  width: 120rpx;
+  text-align: center;
+  line-height: 36rpx
+}
+
+.welcomeText {
+  font-size: 40rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  margin-bottom: 20rpx;
+  display: flex;
+  width: 96%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 36rpx 0;
+  cursor: pointer;
+}
+
+.content {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+
+.item image {
+  width: 84rpx;
+  height: 84rpx;
+  display: block;
+}
+
+.item .desc {
+  margin-top: 18rpx;
+  font-size: 26rpx;
+  color: #333333;
+}
+
+.cardInfo {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 16rpx;
+  /* height: 220rpx; */
+  padding: 30rpx;
+  line-height: 80rpx;
+  box-shadow: 0 8px 12px #ebedf0;
+}
+
+.outBtn {
+  width: 180rpx;
+  height: 54rpx;
+  background: rgba(40, 179, 80, 1);
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 54rpx;
+  color: white;
+}
+
+.outText {
+  height: 33rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 33rpx;
+}
+
+.rowItem {
+  background-color: white;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 12rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.rowItemHover {
+  background-color: #51DA88;
+}
+
+.cardContent {
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 37px;
+  font-size: 26rpx;
+}
+
+.infoEqName {
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42rpx;
+}
+
+.dialogText {
+  display: flex;
+  justify-content: center;
+  padding: 80rpx;
+}
+
+.exit {
+  margin-left: auto;
+  display: flex;
+}
+
+.exitTxt {
+  display: flex;
+  font-size: 32rpx;
+}
+
+.infoEqStatus {
+  margin-left: auto;
+  color: #28B350;
+  font-size: 30rpx;
+}
+
+.showList {
+  position: absolute;
+  width: 86%;
+  left: 56rpx;
+  max-height: 600rpx;
+  overflow: scroll;
+}

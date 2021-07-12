@@ -1,0 +1,61 @@
+<!--install.wxml-->
+<view class="container">
+	<view style="width:100%">
+		<view style="position: relative;height: 100rpx;" class="title">
+			<view>
+				<van-search value="{{ value }}" bind:change="onSearch" bind:cancel="onCancel" use-action-slot placeholder="请输入设备编号搜索切换设备">
+					<view slot="action" bind:tap="onClick">
+						<image src="{{scanning}}" style="width:40rpx;height:40rpx;display:block;"></image>
+					</view>
+				</van-search>
+			</view>
+		</view>
+		<view style="position: absolute;width: 95%;z-index: 99999999;margin-left: 15rpx;" wx:if="{{value && showList}}">
+			<view wx:for="{{searchList}}" wx:for-item="item" wx:key="index" class="rowItem" hover-class="rowItemHover">
+				<view bind:tap="checkItem" data-type="{{item}}">
+					<view>
+						设备型号：{{item.productId}}
+					</view>
+					<!-- <view style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+						MAC：{{item.mac}}
+					</view> -->
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="content" wx:if="{{contentShow}}">
+		<view class="contentTitle">
+			<view class="titleIcon"></view>
+			<text>填写设备信息</text>
+		</view>
+		<view class="form">
+			<van-cell-group>
+				<van-field value="{{ equipmenNo  }}" label="设备编号" readonly input-align="right" placeholder="请选择设备" />
+				<van-field value="{{ equipmenType }}" label="设备型号" readonly input-align="right" placeholder="请选择设备" />
+				<van-field required clearable value="{{ equipmenName }}" label="设备名称" input-align="right" placeholder="请输入名称" />
+				<van-field readonly required value="{{admin}}" label="归属管理员" placeholder="请选择" is-link input-align="right" bind:tap="showAdmin">
+				</van-field>
+				<van-field readonly required value="{{area}}" label="绑定区域" placeholder="请选择" is-link input-align="right" bind:tap="showArea">
+				</van-field>
+				<van-field readonly required value="{{estate}}" label="绑定小区" placeholder="请选择" is-link input-align="right" bind:tap="showEstate">
+				</van-field>
+				<van-field required clearable model:value="{{ address }}" label="详细地址" input-align="right" placeholder="请输入详细地址" />
+				<van-field readonly required value="{{coordinate}}" label="设备坐标" placeholder="请选择" is-link input-align="right" bind:tap="showCoordinate">
+				</van-field>
+			</van-cell-group>
+			<view class="submit">
+				<van-button bind:tap="onClickButtonSubmit" type="primary" block>安装完成</van-button>
+			</view>
+			<van-popup show="{{showAdmin}}" position="bottom" custom-style="height:50%;" bind:close="onAdminColse">
+				<van-picker show-toolbar value-key="text" columns="{{adminColumns}}" bind:cancel="onAdminColse" bind:confirm="onAdminConfirm" />
+			</van-popup>
+			<van-popup show="{{showArea}}" position="bottom" custom-style="height:50%;" bind:close="onAreaColse">
+				<van-area area-list="{{ areaColumns }}" bind:cancel="onAreaColse" bind:confirm="onAreaConfirm" />
+			</van-popup>
+			<van-popup show="{{showEstate}}" position="bottom" bind:close="onEstateColse">
+				<van-picker show-toolbar columns="{{estateColumns}}" bind:cancel="onEstateColse" bind:confirm="onEstateConfirm" />
+			</van-popup>
+			<!-- <van-area value="{{ dvalue }}" columns-num="{{3}}" area-list="{{ areaList }}" bind:change="onChange" bind:confirm="onAreaConfirm" bind:cancel="onAreaColse" /> -->
+		</view>
+	</view>
+</view>

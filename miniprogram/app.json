@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/testReq/index",
+    "pages/EquipmentGet/EquipmentGet",
+    "pages/videoList/index",
+    "pages/video/index",
+    "pages/scanDeliver/index",
+    "pages/equipmentClear/index",
+    "pages/install/index",
+    "pages/videoScan/index",
+    "pages/Advertising/Advertising",
+    "pages/devicemoney/devicemoney",
+    "pages/login/index",
+    "pages/photograph/photograph",
+    "pages/BindDevices/index",
+    "pages/activaAction/index",
+    "pages/bindEquipment/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "华展工厂云",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/testReq/index",
+        "text": "测试",
+        "selectedIconPath": "assets/images/equipmentSelect.png",
+        "iconPath": "assets/images/equipment.png"
+      },
+      {
+        "pagePath": "pages/install/index",
+        "text": "安装",
+        "selectedIconPath": "assets/images/installSelect.png",
+        "iconPath": "assets/images/install.png"
+      }
+    ],
+    "color": "#000",
+    "selectedColor": "#28B350",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff"
+  },
+  "sitemapLocation": "sitemap.json"
+}

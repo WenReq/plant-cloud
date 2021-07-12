@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "设备取币",
+
+  "usingComponents": {},
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-empty": "@vant/weapp/empty/index"
+  }
+}
